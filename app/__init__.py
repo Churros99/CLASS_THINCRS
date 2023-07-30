@@ -15,6 +15,8 @@ class HelloWorld(MethodView):
 def create_app():
     app = Flask(__name__ )
     
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://sa:Desarrollo12@localhost/thincrs'
+        
     hello_world=HelloWorld.as_view("hello_world")
     
     app.add_url_rule("/", view_func=hello_world)
